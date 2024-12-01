@@ -28,6 +28,10 @@ class Post extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
     public function scopePublished($query){
         $query->where('published_at', '<=', Carbon::now());
     }
