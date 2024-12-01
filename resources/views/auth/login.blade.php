@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @include('navigation-menu')
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -39,7 +40,7 @@
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button class="ms-4" action="{{ route('home')}}">
                     {{ __('Log in') }}
                 </x-button>
             </div>

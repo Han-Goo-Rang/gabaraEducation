@@ -7,7 +7,7 @@
             </h1>
             <p class="text-gray-500 text-lg mt-1">Komunitas belajar terbaik di Banjarnegara</p>
             <a class="px-3 py-2 text-lg text-white bg-gray-800 rounded mt-5 inline-block"
-                href="http://127.0.0.1:8000/matapelajaran">Mulai Belajar</a>
+                href="{{ route('posts.index') }}">Mulai Belajar</a>
         </div>
     @endsection
 
@@ -16,11 +16,13 @@
             <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">Featured Posts</h2>
             <div class="w-full">
                 <div class="grid grid-cols-3 gap-10 w-full">
-                    @foreach ($featuredPosts as $post)
-                        <div class="md:col-span-1 col-span-3">
-                            <x-posts.post-card :post="$post" />
-                        </div>
-                    @endforeach
+                    @if (isset($featuredPosts) && $featuredPosts->isNotEmpty())
+                        @foreach ($featuredPosts as $post)
+                            <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3"/>
+                        @endforeach
+                    @else
+                        <p class="text-gray-500">No featured posts available at the moment.</p>
+                    @endif
                 </div>
             </div>
             <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold"
@@ -32,11 +34,13 @@
         <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">Latest Posts</h2>
         <div class="w-full mb-5">
             <div class="grid grid-cols-3 gap-10 w-full">
-                @foreach ($latestPosts as $post)
-                    <div class="md:col-span-1 col-span-3">
-                        <x-posts.post-card :post="$post" />
-                    </div>
-                @endforeach
+                @if (isset($latestPosts) && $latestPosts->isNotEmpty())
+                    @foreach ($latestPosts as $post)
+                        <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3"/>
+                    @endforeach
+                @else
+                    <p class="text-gray-500">No featured posts available at the moment.</p>
+                @endif
             </div>
         </div>
         <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold" href="http://127.0.0.1:8000/blog">More

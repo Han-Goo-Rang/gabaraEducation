@@ -18,12 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('/matapelajaran', [PostController::class, 'index'])->name('posts.index');
+
+Route::get('/matapelajaran/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

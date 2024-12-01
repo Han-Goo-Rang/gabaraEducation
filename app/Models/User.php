@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function likes() {
+        return $this->belongToMany(Post::class, 'post_like')->withTimeStamps();
+    }
 }

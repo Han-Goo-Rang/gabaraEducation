@@ -3,7 +3,7 @@
         <a href="{{ route('home') }}">
             <x-application-mark />
         </a>
-        <div class="top-menu ml-10">
+        <div class="top-menu ml-10 hover:text-yellow-700">
             <div class="flex space-x-4">
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                     {{ __('Home') }}
