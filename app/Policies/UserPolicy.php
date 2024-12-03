@@ -9,7 +9,7 @@ class UserPolicy
 {
 
     public function viewAdmin(User $user):bool{
-        return  $user->isAdmin() || $user->isEdtitor();
+        return  $user->isAdmin() || $user->isEditor();
     }
 
     /**

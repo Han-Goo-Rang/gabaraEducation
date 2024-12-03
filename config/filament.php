@@ -91,4 +91,8 @@ return [
         'auth',
     ],
 
+    'auth' => [
+    'guard' => 'web',
+],
+
 ];
