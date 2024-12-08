@@ -20,6 +20,10 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/matapelajaran', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/matapelajaran/{post:slug}', [PostController::class, 'show'])->name('posts.show');
+
+Route::view('/kontak', 'kontak')->name('kontak');
+
+Route::view('/tentangGabara', 'tentangGabara')->name('tentangGabara');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

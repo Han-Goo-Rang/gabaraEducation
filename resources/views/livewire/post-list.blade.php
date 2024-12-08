@@ -7,7 +7,7 @@
             @if ($this->activeCategory)
                 <x-badge wire:navigate href="{{ route('posts.index', ['category' =>$this->activeCategory->slug]) }}"
                     :textColor="$this->activeCategory->text_color" :bgColor="$this->activeCategory->bg_Color">
-                    {{ $this->$activeCategory->title }}
+                    {{ $this->activeCategory->title }}
                 </x-badge>
             @endif
             @if ($search)

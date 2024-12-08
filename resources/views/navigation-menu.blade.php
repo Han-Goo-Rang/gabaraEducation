@@ -11,10 +11,10 @@
                 <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
                     {{ __('Mata Pelajaran') }}
                 </x-nav-link>
-                <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                    {{ __('Tentang Kami') }}
+                <x-nav-link href="{{ route('tentangGabara') }}" :active="request()->routeIs('tentangGabara')">
+                    {{ __('Tentang Gabara') }}
                 </x-nav-link>
-                <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                <x-nav-link href="{{ route('kontak') }}" :active="request()->routeIs('kontak')">
                     {{ __('Contact') }}
                 </x-nav-link>
 
@@ -29,4 +29,6 @@
             @include('layouts.partials.header-right-guest')
         @endauth
     </div>
+
+
 </nav>
