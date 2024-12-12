@@ -46,3 +46,6 @@
             Posts</a>
     </div>
 </x-app-layout>
+
+<script src="{{ asset('resources/js/navigation.js') }}"></script>
+

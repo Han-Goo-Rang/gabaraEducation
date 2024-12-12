@@ -33,3 +33,6 @@
         {{ $this->posts->onEachSide(1)->links() }}
     </div>
 </div>
+
+<script src="{{ asset('resources/js/navigation.js') }}"></script>
+

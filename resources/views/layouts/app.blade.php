@@ -17,6 +17,10 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        <script src="{{ mix('js/navigation.js') }}" defer></script>
+
+
     </head>
     <body class="font-sans antialiased">
         <x-banner />

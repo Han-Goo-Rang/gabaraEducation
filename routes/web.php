@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,20 @@ Route::get('/matapelajaran', [PostController::class, 'index'])->name('posts.inde
 
 Route::get('/matapelajaran/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
+Route::get('/berita', [NewsController::class, 'index'])->name('news.index');
+
+Route::get('/berita/{news:slug}', [NewsController::class, 'show'])->name('news.show');
+
 Route::view('/kontak', 'kontak')->name('kontak');
 
 Route::view('/tentangGabara', 'tentangGabara')->name('tentangGabara');
+
+Route::view('/programKomunitas', 'programKomunitas')->name('programKomunitas');
+
+
+
+
+Route::view('/testimoni', 'testimoni')->name('testimoni');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

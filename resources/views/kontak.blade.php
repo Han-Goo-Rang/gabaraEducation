@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="info-content">
-                                            <a href="gabaraeducation@gmail.com">gabaraeducation@gmail.com</a>
+                                            <a href="mailto:gabaraeducation@gmail.com">gabaraeducation@gmail.com</a>
                                             <a href="https://wa.link/93t88k">0822 5510 8336</a>
                                         </div>
                                     </div>
@@ -61,23 +61,20 @@
                                     </div>
                                     <div class="info-item">
                                         <div class="info-title">
-                                            <h4>Lowongan Kerja</h4>
+                                            <h4>Info Volunteer</h4>
                                             <div class="icon">
                                                 <i class="icon_briefcase"></i>
                                             </div>
                                         </div>
                                         <div class="info-content">
                                             <p>Kirimkan email anda ke email kami: <a
-                                                    href="gabaraeducation@gmail.com">gabaraeducation@gmail.com</a></p>
+                                                    href="mailto:gabaraeducation@gmail.com">gabaraeducation@gmail.com</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
             </main>
-
-            <!-- Footer -->
-            @include('layouts.partials.footer') <!-- Jika Anda punya footer terpisah -->
         </div>
 
         <!-- Scripts -->

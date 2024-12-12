@@ -22,22 +22,23 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('title')
-                ->live()
-                ->required()->minLength(1)->maxLength(150)
-                ->afterStateUpdated(function(string $operation, $state, Forms\Set $set){
-                    if($operation === 'edit'){
-                        return;
-                    }
-                    $set('slug', Str::slug($state));
-                }),
-                TextInput::make('slug')->required()->minLength(1)->unique(ignoreRecord: true)->maxLength(length: 150),
+                            ->live()
+                            ->required()->minLength(1)->maxLength(150)
+                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                if ($operation === 'edit') {
+                                    return;
+                                }
+
+                                $set('slug', Str::slug($state));
+                            }),
+                        TextInput::make('slug')->required()->minLength(1)->unique(ignoreRecord: true)->maxLength(150),
                 TextInput::make('text_color')->nullable(),
                 TextInput::make('bg_color')->nullable(),
             ]);
