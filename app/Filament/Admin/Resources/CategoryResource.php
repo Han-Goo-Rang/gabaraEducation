@@ -29,7 +29,8 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')
-                            ->live()
+                            ->live(onBlur: true)
+                            ->debounce(500)
                             ->required()->minLength(1)->maxLength(150)
                             ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
                                 if ($operation === 'edit') {
